@@ -1,6 +1,7 @@
 const Header = () => {  
     return (
-        <div className="p-4 flex justify-between fixed top-0 left-0 w-full z-[9999]  bg-black">
+      <>
+       <div className="p-4 flex justify-between fixed top-0 left-0 w-full z-[9999]  bg-black">
         <div className="flex items-center gap-8">
           <h1 className="text-[30px] uppercase text-red-700 font-bold">Movie</h1>
           <nav className="hidden md:flex items-center space-x-5">
@@ -28,6 +29,8 @@ const Header = () => {
           </button>
         </div>
       </div>
+      </>
+       
     )
 }
 
