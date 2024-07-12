@@ -1,6 +1,8 @@
 import React from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { MovieContext } from "../context/MovieProvider";
+
 
 const responsive = {
     superLargeDesktop: {
@@ -21,11 +23,17 @@ const responsive = {
     },
   };
 
+ 
+
 const MovieList = ({title, data}) => {
+
+    const {handlerTrailers} = React.useContext(MovieContext);
+
     if (!data || data.length === 0) {
-        return <div className="my-10 px-10 max-w-full"><h2 className="text-xl uppercase mb-4">{title}</h2><p>No movies available</p></div>;
-      }
-  return (
+      return <div className="my-10 px-10 max-w-full"><h2 className="text-xl uppercase mb-4">{title}</h2><p>No movies available</p></div>;
+    }
+
+    return (
     <div className="my-10 px-10 max-w-full ">
     <h2 className="text-xl uppercase mb-4">{title}</h2>
     <Carousel responsive={responsive} draggable={false}>
@@ -38,6 +46,7 @@ const MovieList = ({title, data}) => {
               movie.poster_path
             })`,
           }}
+          onClick={() => handlerTrailers(movie.id)}
         >
           <div className="bg-black w-full h-full opacity-40 absolute top-0 left-0 z-0" />
           <div className="relative  p-4 flex flex-col items-center justify-end h-full">
@@ -48,6 +57,8 @@ const MovieList = ({title, data}) => {
         </div>
       ))}
     </Carousel>
+
+  
   </div>
   )
 }

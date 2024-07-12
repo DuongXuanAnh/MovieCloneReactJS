@@ -15,7 +15,7 @@ const Banner = () => {
             </p>
             <div className="flex flex-col space-y-4">
               <h1 className="text-[40px] font-bold text-white ">
-                Nghe nói em thích tôi
+                 Have a Crush on You
               </h1>
               <div className="flex items-center space-x-3">
                 <img src={IconRating} alt="rating" className="w-8 h-8" />
@@ -36,10 +36,10 @@ const Banner = () => {
 
             <div className="flex items-center space-x-5">
               <button className="py-2 px-3 bg-black  text-white border border-black font-bold">
-                Chi tiết
+                Details
               </button>
               <button className="py-2 px-3 bg-red-600 text-white font-bold">
-                Xem Phim
+                Watch Now
               </button>
             </div>
           </div>

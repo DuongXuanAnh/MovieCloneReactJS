@@ -1,4 +1,10 @@
-const Header = () => {  
+import { useState } from "react";
+
+
+const Header = ({ onSearch }) => {
+
+  const [search, setSearch] = useState("");
+
     return (
       <>
        <div className="p-4 flex justify-between fixed top-0 left-0 w-full z-[9999]  bg-black">
@@ -21,9 +27,12 @@ const Header = () => {
             type="text"
             placeholder="Search"
             className="border border-gray-300 p-2 text-black"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
           <button
             className="bg-red-700 text-white px-3 py-1 rounded-lg"
+            onClick={() => onSearch(search)}
           >
             Search
           </button>
